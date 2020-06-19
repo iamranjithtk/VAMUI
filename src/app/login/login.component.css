@@ -1,0 +1,30 @@
+.example-card {
+  padding-top: 175px;
+  padding-left: 50px;
+  height: 700px;
+}
+
+.login-title1 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  opacity: 1;
+  color: #19a7b1;
+}
+
+.login-title2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0px;
+  opacity: 1;
+  color:#5B86E5;
+}
+.example-full-width{
+    width: 95%;
+}
+.sign-in-button{
+    
+    width: 90%;
+}
