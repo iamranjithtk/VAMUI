@@ -2,7 +2,7 @@ import { MaterialModule } from './material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule , NO_ERRORS_SCHEMA } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { HelpComponent } from './help/help.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import {HttpClientModule} from '@angular/common/http';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent,
     AboutusComponent,
     HelpComponent,
-    ContactusComponent
+    ContactusComponent,
+    TeacherDashboardComponent
   ],
   imports: [
     FormsModule,
@@ -32,7 +34,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   schemas : [ NO_ERRORS_SCHEMA ],
   providers: [],

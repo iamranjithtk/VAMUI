@@ -1,3 +1,4 @@
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HelpComponent } from './help/help.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactusComponent
+  },
+  {
+    path: 'teacherdashboard',
+    component: TeacherDashboardComponent
   },
 ];
 
