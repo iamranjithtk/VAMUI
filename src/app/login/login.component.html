@@ -1,65 +1,65 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title class="login-title1"
-      >Welcome to the VAM school.</mat-card-title
-    >
-    <mat-card-title class="login-title2">
-      "Let's Learn Together"</mat-card-title
-    >
-  </mat-card-header>
-  <form class="example-form" [formGroup]="loginForm">
-  <mat-card-content>
-    
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Email"
-                
-                formControlName="username"
-                required
-              />
-              <button mat-button matPrefix mat-icon-button>
-                <mat-icon>alternate_email</mat-icon>
-              </button>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Password"
-                formControlName="password"
-                type="password"
-                name="password"
-                required
-              />
-              <button mat-button matPrefix mat-icon-button>
-                <mat-icon>securitycd va</mat-icon>
-              </button>
-            </mat-form-field>
-          </td>
-        </tr>
-      </table>
-    
-    <mat-spinner></mat-spinner>
-  </mat-card-content>
-  <mat-card-actions>
-    <button
-      class="sign-in-button"
-      mat-raised-button
-      color="primary"
-      (click)="loginUser()"
-    >
-      Sign In
-    </button>
-  </mat-card-actions>
-</form>
-</mat-card>
+<div class="topnav">
+  <a class="vam-title" href="#home">VAM</a>
+
+  <div class="topnav-right mr-5">
+    <!-- <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a> -->
+    <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+    <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+    <a class="nav-link" routerLink="/help" routerLinkActive="active">Help</a>
+    <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact Us</a>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+    </div>
+    <div class="col">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title class="login-title1">Welcome to the VAM school.</mat-card-title>
+          <mat-card-title class="login-title2">
+            "Let's Learn Together"</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <form class="example-form">
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field appearance="legacy" class="example-full-width">
+                    <input matInput placeholder="Email" [(ngModel)]="loginUserData.email" name="email" required />
+                    <button mat-button matPrefix mat-icon-button>
+                      <mat-icon>alternate_email</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field appearance="legacy" class="example-full-width">
+                    <input matInput placeholder="Password" [(ngModel)]="loginUserData.email" type="password"
+                      name="password" required />
+                    <button mat-button matPrefix mat-icon-button>
+                      <mat-icon>security</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="sign-in-button" mat-raised-button color="primary">
+            Sign In
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
 <!--   
 <div class="py-5">
     <div class="row">
