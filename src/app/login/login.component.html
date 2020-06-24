@@ -22,14 +22,14 @@
           <mat-card-title class="login-title2">
             "Let's Learn Together"</mat-card-title>
         </mat-card-header>
-
+        <form class="example-form" [formGroup]="loginForm">
         <mat-card-content>
-          <form class="example-form">
+         
             <table class="example-full-width" cellspacing="0">
               <tr>
                 <td>
                   <mat-form-field appearance="legacy" class="example-full-width">
-                    <input matInput placeholder="Email" [(ngModel)]="loginUserData.email" name="email" required />
+                    <input matInput placeholder="Email" formControlName="username" name="email" required />
                     <button mat-button matPrefix mat-icon-button>
                       <mat-icon>alternate_email</mat-icon>
                     </button>
@@ -39,7 +39,7 @@
               <tr>
                 <td>
                   <mat-form-field appearance="legacy" class="example-full-width">
-                    <input matInput placeholder="Password" [(ngModel)]="loginUserData.email" type="password"
+                    <input matInput placeholder="Password" formControlName="password" type="password"
                       name="password" required />
                     <button mat-button matPrefix mat-icon-button>
                       <mat-icon>security</mat-icon>
@@ -48,13 +48,14 @@
                 </td>
               </tr>
             </table>
-          </form>
+          
         </mat-card-content>
         <mat-card-actions>
-          <button class="sign-in-button" mat-raised-button color="primary">
+          <button class="sign-in-button" (click)="loginUser()" mat-raised-button color="primary">
             Sign In
           </button>
         </mat-card-actions>
+      </form>
       </mat-card>
     </div>
   </div>
