@@ -18,6 +18,12 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
 import { AdminComponent } from './admin/admin.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { MaterialModule } from './shared-modules/material.module';
+import { TeacherNavbarComponent } from './teacher-navbar/teacher-navbar.component';
+import { TeacherNotesComponent } from './teacher-notes/teacher-notes.component';
+import { TeacherStudentListComponent } from './teacher-student-list/teacher-student-list.component';
+import { TeacherHomeWorkComponent } from './teacher-home-work/teacher-home-work.component';
+import { TeacherUploadVideoComponent } from './teacher-upload-video/teacher-upload-video.component';
+import { TeacherLiveClassComponent } from './teacher-live-class/teacher-live-class.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { MaterialModule } from './shared-modules/material.module';
     ContactusComponent,
     TeacherDashboardComponent,
     AdminComponent,
-    WrapperComponent
+    WrapperComponent,
+    TeacherNavbarComponent,
+    TeacherNotesComponent,
+    TeacherStudentListComponent,
+    TeacherHomeWorkComponent,
+    TeacherUploadVideoComponent,
+    TeacherLiveClassComponent
   ],
   imports: [
     FormsModule,
