@@ -7,8 +7,9 @@
       "Let's Learn Together"</mat-card-title
     >
   </mat-card-header>
+  <form class="example-form" [formGroup]="loginForm">
   <mat-card-content>
-    <form class="example-form">
+    
       <table class="example-full-width" cellspacing="0">
         <tr>
           <td>
@@ -16,8 +17,8 @@
               <input
                 matInput
                 placeholder="Email"
-                [(ngModel)]="loginUserData.email"
-                name="email"
+                
+                formControlName="username"
                 required
               />
               <button mat-button matPrefix mat-icon-button>
@@ -32,7 +33,7 @@
               <input
                 matInput
                 placeholder="Password"
-                [(ngModel)]="loginUserData.email"
+                formControlName="password"
                 type="password"
                 name="password"
                 required
@@ -44,7 +45,7 @@
           </td>
         </tr>
       </table>
-    </form>
+    
     <mat-spinner></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
@@ -52,10 +53,12 @@
       class="sign-in-button"
       mat-raised-button
       color="primary"
+      (click)="loginUser()"
     >
       Sign In
     </button>
   </mat-card-actions>
+</form>
 </mat-card>
 <!--   
 <div class="py-5">
