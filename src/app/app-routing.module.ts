@@ -8,49 +8,31 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: LoginComponent,
-    pathMatch: 'full'
+    path: 'wrapper', component: WrapperComponent, children: [
+      { path: 'teachertimetable', component: TeachertimetableComponent },
+      { path: 'teacherdashboard', component: TeacherDashboardComponent },
+      { path: 'admin', component: AdminComponent }
+    ]
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'teachertimetable',
-    component: TeachertimetableComponent
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'aboutus',
-    component: AboutusComponent
-  },
-  {
-    path: 'help',
-    component: HelpComponent
-  },
-  {
-    path: 'contact',
-    component: ContactusComponent
-  },
-  {
-    path: 'teacherdashboard',
-    component: TeacherDashboardComponent
-  },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'help', component: HelpComponent },
+  { path: 'contact', component: ContactusComponent },
+
+  // Wildcard Route
+  { path: '**', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', component: LoginComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
