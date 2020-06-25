@@ -18,6 +18,7 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
 import { AdminComponent } from './admin/admin.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { MaterialModule } from './shared-modules/material.module';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MaterialModule } from './shared-modules/material.module';
     ContactusComponent,
     TeacherDashboardComponent,
     AdminComponent,
-    WrapperComponent
+    WrapperComponent,
+    SideBarComponent
   ],
   imports: [
     FormsModule,

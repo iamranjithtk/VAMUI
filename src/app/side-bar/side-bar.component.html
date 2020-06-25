@@ -1,0 +1,22 @@
+<nav class="sidebar">
+    <div class="list-group">
+        <a routerLink="" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user-secret"></i>&nbsp;Name Here
+        </a>
+        <a routerLink="" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user-secret"></i>&nbsp;Dashboard
+        </a>
+        <a [routerLink]="" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user"></i>&nbsp;Events & Mini Calendar
+        </a>
+        <a [routerLink]="" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user-plus"></i>&nbsp;To-Do List
+        </a>
+        <a [routerLink]="" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-users"></i>&nbsp;Time Table
+        </a>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
