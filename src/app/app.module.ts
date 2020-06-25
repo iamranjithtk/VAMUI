@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule , NO_ERRORS_SCHEMA } from '@angular/core';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,9 @@ import { TeacherHomeWorkComponent } from './teacher-home-work/teacher-home-work.
 import { TeacherUploadVideoComponent } from './teacher-upload-video/teacher-upload-video.component';
 import { TeacherLiveClassComponent } from './teacher-live-class/teacher-live-class.component';
 import { TeacherCheckAssignmentsComponent } from './teacher-check-assignments/teacher-check-assignments.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import { TeacherCheckAssignmentsComponent } from './teacher-check-assignments/te
     TeacherHomeWorkComponent,
     TeacherUploadVideoComponent,
     TeacherLiveClassComponent,
-    TeacherCheckAssignmentsComponent
+    TeacherCheckAssignmentsComponent,
+    SideBarComponent
   ],
   imports: [
     FormsModule,
