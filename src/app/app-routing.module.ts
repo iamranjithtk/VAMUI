@@ -16,6 +16,7 @@ import { AdminComponent } from './admin/admin.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { TeacherLiveClassComponent } from './teacher-live-class/teacher-live-class.component';
 import { TeacherHomeWorkComponent } from './teacher-home-work/teacher-home-work.component';
+import { TeacherCheckAssignmentsComponent } from './teacher-check-assignments/teacher-check-assignments.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'teacheruploadvideo', component: TeacherUploadVideoComponent },
       { path: 'teacherliveclass', component: TeacherLiveClassComponent },
       { path: 'teacherhomework', component: TeacherHomeWorkComponent },
+      { path: 'teachercheckassignments', component: TeacherCheckAssignmentsComponent },
     ]
   },
   { path: 'register', component: RegisterComponent },

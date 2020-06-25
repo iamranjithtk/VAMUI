@@ -1,0 +1,37 @@
+.notes {
+    top: 200px;
+    left: 494px;
+    width: 895px;
+    height: 698px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #81818133;
+    border-radius: 24px;
+    opacity: 1;
+  }
+  
+  .notes-image {
+    background: url("src\assets\images\meditation.svg") no-repeat;
+    margin: auto;
+    padding: 10px;
+    width: 600px;
+    height: 399px;
+    opacity: 1;
+  }
+  .col-2{
+    font-style: normal;
+    font-size: 25px;
+    text-align: left;
+    color: black;
+  }
+  .col-4{
+    font-style: normal;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+  }
+  .btn-primary {
+      width:100%;
+  }
+  .row{
+      margin-top: 25px;
+  }

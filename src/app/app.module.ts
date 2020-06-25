@@ -24,6 +24,7 @@ import { TeacherStudentListComponent } from './teacher-student-list/teacher-stud
 import { TeacherHomeWorkComponent } from './teacher-home-work/teacher-home-work.component';
 import { TeacherUploadVideoComponent } from './teacher-upload-video/teacher-upload-video.component';
 import { TeacherLiveClassComponent } from './teacher-live-class/teacher-live-class.component';
+import { TeacherCheckAssignmentsComponent } from './teacher-check-assignments/teacher-check-assignments.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TeacherLiveClassComponent } from './teacher-live-class/teacher-live-cla
     TeacherStudentListComponent,
     TeacherHomeWorkComponent,
     TeacherUploadVideoComponent,
-    TeacherLiveClassComponent
+    TeacherLiveClassComponent,
+    TeacherCheckAssignmentsComponent
   ],
   imports: [
     FormsModule,
