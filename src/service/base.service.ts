@@ -22,9 +22,7 @@ export class BaseService {
     
     return this.http.post(url, data).pipe(
       map(res => {
-        // if (res['message']) {
-        //   this.alertService.showSuccess({title: 'Success', message: res['message']});
-        // }
+        
         return res;
       }),
       catchError(err => {
@@ -36,9 +34,7 @@ export class BaseService {
   public patchRequest(url, data = {}) {
     return this.http.patch(url, data).pipe(
       map(res => {
-        // if (res['message']) {
-        //   this.alertService.showSuccess({title: 'Success', message: res['message']});
-        // }
+       
         return res;
       }),
       catchError(err => {
@@ -57,9 +53,7 @@ export class BaseService {
     }
     return this.http.delete(url, options).pipe(
       map(res => {
-        // if (res['message']) {
-        //   this.alertService.showSuccess({title: 'Success', message: res['message']});
-        // }
+       
         return res;
       }),
       catchError(err => {
@@ -72,9 +66,7 @@ export class BaseService {
     
     return this.http.put(url, data).pipe(
       map(res => {
-        // if (res['message']) {
-        //   this.alertService.showSuccess({title: 'Success', message: res['message']});
-        // }
+       
         return res;
       }),
       catchError(err => {
@@ -109,53 +101,13 @@ export class BaseService {
       case 'INVALID_CREDENTIALS':
       case 'BUSINESS_LOGIC_ERROR':
       case 'RESOURCE_NOT_FOUND':
-        // this.alertService.showErrors(error.error.error);
+       
         return throwError(error.error.error);
       case 'VALIDATION':
-        // this.alertService.showErrors('Validation Error');
-        // const errorMessageObject = error.error.message;
-        // this.alertService.setValidationsErrors(this.returnArrayOfErrors(errorMessageObject))
-        // this.alertService.showErrors(this.returnArrayOfErrors(errorMessageObject));
-        // return throwError(this.returnArrayOfErrors(errorMessageObject));
+        
     }
     return throwError(error);
   }
 
-  // public returnArrayOfErrors(errorMessageObject) {
-  //   const parsedArray = [];
-  //   Object.keys(errorMessageObject).forEach(message => {
-  //     const keyName = (message.split('.').join(' ')).replace(/([A-Z])/g, ' $1').replace(/\w\S*/g, function (txt) {
-  //       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  //     });
-  //     const description = this.joinMessages(errorMessageObject[message]).split('.').join(' ');
-  //     const errorObject = {
-  //       keyName,
-  //       description,
-  //       completeMessage: `${keyName} : ${description}`
-  //     };
-  //     parsedArray.push(errorObject);
-  //   });
-  //   return parsedArray;
-  // }
-
-  // public uploadRequest(uploadURL, data) {
-  //   return this.http.post<any>(uploadURL, data, {
-  //     reportProgress: true,
-  //     observe: 'events',
-  //   }).pipe(map((event) => {
-
-  //       switch (event.type) {
-
-  //         case HttpEventType.UploadProgress:
-  //           const progress = Math.round(100 * event.loaded / event.total);
-  //           return {status: 'progress', message: progress};
-
-  //         case HttpEventType.Response:
-  //           return event.body;
-  //         default:
-  //           return `Unhandled event: ${event.type}`;
-  //       }
-  //     })
-  //   );
-  // }
+  
 }
