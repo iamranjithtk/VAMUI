@@ -1,4 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+    height: 100%;
+}
+body {
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.chapter{
+    color: rgba(0,0,0,.5);
+}
+
+.liveBtn{
+    width: 180px;
+    background: transparent linear-gradient(256deg, var(--unnamed-color-36d1dc) 0%, #A0FFC3 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(256deg, #36D1DC 0%, #A0FFC3 100%) 0% 0% no-repeat padding-box;
+    border-radius: 18px;
+    opacity: 1;
+}
+
+.card{
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.welcome{
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    backdrop-filter: blur(30px); 
+    -webkit-backdrop-filter: blur(30px);
+    /* width: 1300px; */
+    /* margin-left: -28px; */
+    height: 60px;
+}
+
+.student-name{
+    padding-left: 80px;
+}
+
+.navbarLink{
+    font-size: 18px;
+}
+
+.navitem{
+    margin-right: 7rem;
+}
+
+.navbarClass{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 12px #81818133;
+    border-radius: 22px 22px 0px 0px;
+    opacity: 1;
+}
+
+.navbar-light .navbar-nav .active.nav-link{
+    background-color: #007bff;
+    border-radius: .25rem;
+}

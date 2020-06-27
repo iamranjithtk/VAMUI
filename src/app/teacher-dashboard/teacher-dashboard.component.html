@@ -1,21 +1,26 @@
-<button mat-icon-button>
-    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-  </button>>
+<div class="">
+  <div class="col-md-12 col-lg-12">
+      <nav class="navbar navbar-expand-lg navbar-light navbarClass">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                  <li class="nav-item navitem ml-4">
+                      <a class="nav-link navbarLink" routerLink="/wrapper/teacherdashboard/teacherliveclass" routerLinkActive="active">Live Class</a>
+                  </li>
+                  <li class="nav-item navitem">
+                      <a class="nav-link navbarLink" routerLink="/wrapper/teacherdashboard/teacheruploadvideo" routerLinkActive="active">Upload Videos</a>
+                  </li>
+                  <li class="nav-item navitem">
+                      <a class="nav-link navbarLink" routerLink="/wrapper/teacherdashboard/teacherhomework" routerLinkActive="active">Homework</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link navbarLink" routerLink="/wrapper/teacherdashboard/teachernotes" routerLinkActive="active">Notes</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+  </div>
+</div>
 
-<mat-sidenav-container>
-    <mat-sidenav #sidenav>
-      <mat-nav-list>
-  
-        <a mat-list-item [routerLink]="'/home'"> Home </a>
-        <a mat-list-item [routerLink]="'/register'"> Register </a>
-        <a mat-list-item [routerLink]="'/teachertimetable'"> Contacts </a>
-        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-  
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <div style="height: 88vh;">
-        <router-outlet></router-outlet>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+<div class="container ml-2 mt-4">
+    <router-outlet></router-outlet>
+</div>

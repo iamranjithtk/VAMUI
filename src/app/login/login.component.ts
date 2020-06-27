@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
       this.authService.authenticate(this.loginForm.value).subscribe(data => {
         if(data.role[0]==='TEACHER')
         {
-        
-          this.router.navigate(['/teacherdashboard']);
+          this.router.navigate(['wrapper/teacher-main-page']);
+        } else{
+          this.router.navigate(['wrapper/student-main-page']);
         }
         
           // this.globalService.setAccessToken(data.token);
