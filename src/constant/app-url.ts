@@ -6,9 +6,9 @@ export class AppUrl {
   constructor() {
   }
   static get APP_URL(): string {
-    return environment.appUrl + 'api/';
+    return environment.appUrl;
   }
   static get AUTH(): string {
-    return AppUrl.APP_URL + 'auth/login';
+    return AppUrl.APP_URL + 'users/login_with_password/';
   }
 }

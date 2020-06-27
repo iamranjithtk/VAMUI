@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from '../../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +10,9 @@ import { AuthService } from '../../service/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb:FormBuilder,public authService:AuthService) {
+  constructor(private fb:FormBuilder,public authService:AuthService,public router: Router) {
     this.loginForm = this.fb.group({
-      'username': ['', Validators.required],
+      'email': ['', Validators.required],
       'password': ['', Validators.required]
     });
    }
@@ -22,8 +23,14 @@ export class LoginComponent implements OnInit {
   }
   loginUser() {
       this.loginForm.get('password').markAsTouched();
-      this.loginForm.get('username').markAsTouched();
+      this.loginForm.get('email').markAsTouched();
       this.authService.authenticate(this.loginForm.value).subscribe(data => {
+        if(data.role[0]==='TEACHER')
+        {
+        
+          this.router.navigate(['/register']);
+        }
+        
           // this.globalService.setAccessToken(data.token);
           // this.authService.self({all: true}).subscribe((userDetails) => {
           //   this.isBusy = false;
