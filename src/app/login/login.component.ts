@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         if(data.role[0]==='TEACHER')
         {
         
-          this.router.navigate(['/register']);
+          this.router.navigate(['/teacherdashboard']);
         }
         
           // this.globalService.setAccessToken(data.token);
