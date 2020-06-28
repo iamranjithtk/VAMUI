@@ -15,6 +15,7 @@ import { HelpComponent } from './help/help.component';
 import { ContactusComponent } from './contactus/contactus.component';
 
 import { MaterialModule } from './shared-modules/material.module';
+import { HtpInterceptor } from 'src/service/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { MaterialModule } from './shared-modules/material.module';
     FlexLayoutModule
   ],
   schemas : [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [HtpInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

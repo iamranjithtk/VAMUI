@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/service/storage.service';
 
 @Component({
   selector: 'app-students-main-page',
@@ -15,8 +16,13 @@ export class StudentsMainPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  oncardClick(){
+  oncardClick() {
     this.router.navigate(['/wrapper/student-dashboard']);
+  }
+  logout() {
+    StorageService.clearAll();
+    location.reload();
+
   }
 
 }

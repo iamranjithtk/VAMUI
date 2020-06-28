@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/service/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb:FormBuilder,public authService:AuthService,public router: Router) {
+  constructor(private fb:FormBuilder,public authService:AuthService,public router: Router ) {
     this.loginForm = this.fb.group({
       'email': ['', Validators.required],
       'password': ['', Validators.required]
@@ -25,12 +26,19 @@ export class LoginComponent implements OnInit {
       this.loginForm.get('password').markAsTouched();
       this.loginForm.get('email').markAsTouched();
       this.authService.authenticate(this.loginForm.value).subscribe(data => {
+        StorageService.setItem('token',data.token);
+        StorageService.setItem('role',data.role[0]);
         if(data.role[0]==='TEACHER')
         {
           this.router.navigate(['wrapper/teacher-main-page']);
-        } else{
+        } else if(data.role[0]==='STUDENT'){
           this.router.navigate(['wrapper/student-main-page']);
         }
+        else if(data.role[0]==='OWNER'){
+          this.router.navigate(['wrapper/admin']);
+        }
+
+        
         
           // this.globalService.setAccessToken(data.token);
           // this.authService.self({all: true}).subscribe((userDetails) => {

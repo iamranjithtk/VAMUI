@@ -11,4 +11,8 @@ export class AppUrl {
   static get AUTH(): string {
     return AppUrl.APP_URL + 'users/login_with_password/';
   }
+  static get Logout(): string {
+    return AppUrl.APP_URL + 'users/logout/';
+  }
+  
 }

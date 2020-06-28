@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/service/auth.service';
+import { StorageService } from 'src/service/storage.service';
 
 @Component({
   selector: 'app-teacher-navbar',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 export class TeacherNavbarComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,public authService:AuthService
   ) { }
 
   ngOnInit() {
@@ -17,6 +19,15 @@ export class TeacherNavbarComponent implements OnInit {
 
   gotoClassroom(){
     this.router.navigate(['/wrapper/teacherdashboard']);
+  }
+  logout(){
+         StorageService.clearAll();
+         location.reload();
+    // this.authService.logout().subscribe(res=>{
+    //   debugger
+    //    StorageService.clearAll();
+    //    location.reload();
+    // });
   }
 
 }
