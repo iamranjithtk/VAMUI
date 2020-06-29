@@ -18,6 +18,7 @@ import { StudentVideosComponent } from '../student-videos/student-videos.compone
 import { StudentHomeworkComponent } from '../student-homework/student-homework.component';
 import { StudentsMainPageComponent } from '../students-main-page/students-main-page.component';
 import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.component';
+import { HeaderComponent } from '../header/header.component';
 
 const routes: Routes = [
   {
@@ -34,7 +35,9 @@ const routes: Routes = [
           { path: 'teachercheckassignments', component: TeacherCheckAssignmentsComponent }
         ]
       },
-      { path: 'teacher-main-page', component: TeacherNavbarComponent},
+      { path: 'teacher-main-page', component: TeacherNavbarComponent, children: [
+        { path: 'header', component: HeaderComponent}
+     ]},
       {
         path: 'student-dashboard', component: StudentDashboardComponent, children: [
           { path: 'student-live-class', component: StudentLiveClassComponent },
@@ -43,7 +46,10 @@ const routes: Routes = [
           { path: 'student-notes', component: StudentNotesComponent }
         ]
       },
-      { path: 'student-main-page', component: StudentsMainPageComponent }
+      { path: 'student-main-page', component: StudentsMainPageComponent, children: [
+        { path: 'header', component: HeaderComponent}
+     ] },
+      
     ]
   }
 ]

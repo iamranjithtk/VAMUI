@@ -6,34 +6,34 @@ import { Injectable } from '@angular/core';
 export class StorageService {
 
   static getItem(key) {
-    return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : null;
+    return sessionStorage.getItem(key) ? JSON.parse(sessionStorage.getItem(key)) : null;
   }
 
   static setItem(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+    sessionStorage.setItem(key, JSON.stringify(value));
   }
 
   static removeItem(key) {
-    localStorage.removeItem(key);
+    sessionStorage.removeItem(key);
   }
 
   static clearAll() {
-    localStorage.clear();
+    sessionStorage.clear();
   }
 
   static setUserToken(token, tokenType) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('tokenType', tokenType);
+    sessionStorage.setItem('token', token);
+    sessionStorage.setItem('tokenType', tokenType);
   }
 
   static getToken(): string {
-    return localStorage.getItem('token');
+    return sessionStorage.getItem('token');
   }
 
   constructor() {
   }
   
   public setUser(user) {
-    localStorage.setItem('user', user);
+    sessionStorage.setItem('user', user);
   }
 }

@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import { BaseService } from './base.service';
 import { AppUrl } from 'src/constant/app-url';
 import { StorageService } from './storage.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,4 +23,12 @@ export class AuthService extends BaseService{
     StorageService.clearAll();
     location.reload();
   }
+
+//   fetchStudentDetails(){
+//     // let authentication_header=StorageService.getItem('token');
+//     // let headerOptions = new Headers({'Content-Type':'application/json','Authorization':authentication_header}); 
+  
+//     return this.getRequest(AppUrl+"student/course/");
+// }
+
 }

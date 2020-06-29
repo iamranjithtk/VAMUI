@@ -82,3 +82,11 @@
 .topnav-right {
   float: right;
 }
+
+.contact-row{
+  background-color: #36D1DC;
+}
+
+section{
+  padding: 0;
+}

@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
 import { SharedRoutingModule } from './shared-routing.module';
 import { StudentsMainPageComponent } from '../students-main-page/students-main-page.component';
 import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.component';
+import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.compone
     StudentHomeworkComponent,
     SideBarComponent,
     StudentsMainPageComponent,
-    TeacherNavbarComponent
+    TeacherNavbarComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -66,7 +68,8 @@ import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.compone
     StudentVideosComponent,
     StudentNotesComponent,
     StudentsMainPageComponent,
-    TeacherNavbarComponent
+    TeacherNavbarComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }

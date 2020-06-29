@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
         else if(data.role[0]==='OWNER'){
           this.router.navigate(['wrapper/admin']);
         }
-
         
         
           // this.globalService.setAccessToken(data.token);

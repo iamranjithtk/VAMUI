@@ -20,14 +20,5 @@ export class TeacherNavbarComponent implements OnInit {
   gotoClassroom(){
     this.router.navigate(['/wrapper/teacherdashboard']);
   }
-  logout(){
-         StorageService.clearAll();
-         location.reload();
-    // this.authService.logout().subscribe(res=>{
-    //   debugger
-    //    StorageService.clearAll();
-    //    location.reload();
-    // });
-  }
 
 }
