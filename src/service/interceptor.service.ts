@@ -16,7 +16,7 @@ export class InterceptorService implements HttpInterceptor {
     const headers = {'Content-Type': 'application/json', 'Accept': 'application/json'};
     // todo add token from shared service
     if (StorageService.getItem('token')) {
-      headers['Authorization'] = 'Token' + StorageService.getItem('token');
+      headers['Authorization'] = 'Token ' + StorageService.getItem('token');
     }
     // if (this.globalService.getSelf() && this.globalService.getSelf().getCurrentEnvironment() && this.globalService.getSelf().getCurrentEnvironment().envMappingId) {
     //   headers['Env-id'] = this.globalService.getSelf().getCurrentEnvironment().envMappingId;

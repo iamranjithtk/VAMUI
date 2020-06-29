@@ -14,5 +14,8 @@ export class AppUrl {
   static get Logout(): string {
     return AppUrl.APP_URL + 'users/logout/';
   }
+  static get TEACHER_COURSE_LIST(): string {
+    return AppUrl.APP_URL + 'teacher/course/';
+  }
   
 }
