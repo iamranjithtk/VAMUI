@@ -1,10 +1,7 @@
-import {Injectable} from '@angular/core';
 import {environment} from '../environments/environment';
-@Injectable()
+
 export class AppUrl {
 
-  constructor() {
-  }
   static get APP_URL(): string {
     return environment.appUrl;
   }
@@ -16,6 +13,10 @@ export class AppUrl {
   }
   static get TEACHER_COURSE_LIST(): string {
     return AppUrl.APP_URL + 'teacher/course/';
+  }
+
+  static get STUDENT_COURSE_LIST(): string {
+    return AppUrl.APP_URL + 'student/course/';
   }
   
 }

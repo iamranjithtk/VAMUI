@@ -22,6 +22,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { StudentsMainPageComponent } from '../students-main-page/students-main-page.component';
 import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.component';
 import { HeaderComponent } from '../header/header.component';
+import { HtpInterceptor } from 'src/service/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { HeaderComponent } from '../header/header.component';
     StudentsMainPageComponent,
     TeacherNavbarComponent,
     HeaderComponent
-  ]
+  ],
+  providers: [HtpInterceptor]
 })
 export class SharedModule { }
