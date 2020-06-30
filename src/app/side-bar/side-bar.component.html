@@ -52,6 +52,12 @@
                                 Time Table
                             </a>
                         </li>
+                        <li class="nav-item" *ngIf="role==='OWNER'">
+                            <a class="nav-link" (click)="logout()"
+                            routerLinkActive="active">
+                                Logout
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

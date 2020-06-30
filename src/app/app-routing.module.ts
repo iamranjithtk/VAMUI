@@ -19,8 +19,8 @@ const routes: Routes = [
 
   // Wildcard Route
   { path: '**', component: LoginComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '', component: LoginComponent }
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
