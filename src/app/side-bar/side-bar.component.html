@@ -30,7 +30,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" routerLink="/wrapper/student-main-page" routerLinkActive="active">
+                            <a class="nav-link" routerLink="{{role == 'STUDENT' ? '/wrapper/student-main-page' : '/wrapper/teacher-main-page'}}" routerLinkActive="active">
                                 Dashboard
                             </a>
                         </li>

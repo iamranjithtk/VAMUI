@@ -24,11 +24,4 @@ export class AuthService extends BaseService{
     location.reload();
   }
 
-//   fetchStudentDetails(){
-//     // let authentication_header=StorageService.getItem('token');
-//     // let headerOptions = new Headers({'Content-Type':'application/json','Authorization':authentication_header}); 
-  
-//     return this.getRequest(AppUrl+"student/course/");
-// }
-
 }

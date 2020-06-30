@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageService } from 'src/service/storage.service';
-import { AuthService } from 'src/service/auth.service';
+import { StudentService } from '../../service/student.service';
 
 @Component({
   selector: 'app-students-main-page',
@@ -11,10 +10,11 @@ import { AuthService } from 'src/service/auth.service';
 export class StudentsMainPageComponent implements OnInit {
 
   dummyData;
+  studentDataList: any;
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private studentService: StudentService
   ) {}
 
   ngOnInit() {
@@ -45,9 +45,12 @@ export class StudentsMainPageComponent implements OnInit {
         "subject": "English"
       },
     ]
-  //   this.authService.fetchStudentDetails().subscribe(res => {
-  //     console.log("res = "+JSON.stringify(res))
-  // });
+    
+    this.studentService.fetchStudentDetails().subscribe(res => {
+      this.studentDataList = res;
+      console.log("res = "+JSON.stringify(res))
+  });
+  
   }
 
   oncardClick() {

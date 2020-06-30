@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StorageService } from 'src/service/storage.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { StorageService } from 'src/service/storage.service';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() studentData;
   userrole: string;
 
   constructor() { }
