@@ -8,7 +8,7 @@ import { StorageService } from 'src/service/storage.service';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() studentData;
+  // @Input() studentData;
   userrole: string;
 
   constructor() { }
