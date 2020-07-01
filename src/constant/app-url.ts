@@ -22,5 +22,9 @@ export class AppUrl {
   static get STUDENT_IN_COURSE(): string {
     return AppUrl.APP_URL + 'course/students_in_course/?course_id=1';
   }
+
+  static get ADMIN_DETAILS(): string {
+    return AppUrl.APP_URL + 'school/admin_dashboard/';
+  }
   
 }
