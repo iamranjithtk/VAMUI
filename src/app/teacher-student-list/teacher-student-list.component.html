@@ -3,7 +3,16 @@
     Students
   </div>
   <div class="student-list">
-    <div class="row">
+    <div class="row" *ngFor="let details of studentInCourseList">
+      <div class="col-2">
+        <img
+          src="https://www.w3schools.com/howto/img_avatar.png"
+          alt="Avatar"
+        />
+      </div>
+      <div class="col">{{details.user.email}}</div>
+    </div>
+    <!-- <div class="row">
       <div class="col-2">
         <img
           src="https://www.w3schools.com/howto/img_avatar.png"
@@ -38,15 +47,6 @@
         />
       </div>
       <div class="col">Ashutosh Singla</div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <img
-          src="https://www.w3schools.com/howto/img_avatar.png"
-          alt="Avatar"
-        />
-      </div>
-      <div class="col">Ashutosh Singla</div>
-    </div>
+    </div> -->
   </div>
 </div>
