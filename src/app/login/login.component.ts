@@ -10,7 +10,10 @@ import { StorageService } from 'src/service/storage.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
   loginForm: FormGroup;
+  isLoading: boolean = false;
+
   constructor(private fb:FormBuilder,public authService:AuthService,public router: Router ) {
     this.loginForm = this.fb.group({
       'email': ['', Validators.required],
@@ -23,9 +26,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   loginUser() {
+      this.isLoading = true;
       this.loginForm.get('password').markAsTouched();
       this.loginForm.get('email').markAsTouched();
       this.authService.authenticate(this.loginForm.value).subscribe(data => {
+        this.isLoading = false;
         StorageService.setItem('token',data.token);
         StorageService.setItem('role',data.role[0]);
         if(data.role[0]==='TEACHER')
@@ -52,6 +57,7 @@ export class LoginComponent implements OnInit {
           // });
         },
         error => {
+          this.isLoading = false;
           // this.isBusy = false;
           // this.alertService.showError({title: 'Login Failure', message: 'User not found'});
         });
