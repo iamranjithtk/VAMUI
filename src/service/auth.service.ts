@@ -19,9 +19,7 @@ export class AuthService extends BaseService{
   }
   
   logout() {
-    // return this.postRequest(AppUrl.Logout);
-    StorageService.clearAll();
-    location.reload();
+     return this.postRequest(AppUrl.Logout);
   }
 
 }
