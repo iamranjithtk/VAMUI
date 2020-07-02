@@ -19,6 +19,12 @@ export class SideBarComponent implements OnInit {
   logout()
   {
    
-    this.authService.logout();
+    this.authService.logout().subscribe(res=>{
+      if(res)
+      {
+        StorageService.clearAll();
+        location.reload();
+      }
+    })
   }
 }
