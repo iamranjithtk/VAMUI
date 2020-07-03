@@ -26,5 +26,9 @@ export class AppUrl {
   static get ADMIN_DETAILS(): string {
     return AppUrl.APP_URL + 'school/admin_dashboard/';
   }
+
+  static get uploadDocs(): string {
+    return AppUrl.APP_URL + 'assignment-questions/';
+  }
   
 }

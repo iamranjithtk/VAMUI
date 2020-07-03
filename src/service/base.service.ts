@@ -1,5 +1,5 @@
 
-import {HttpClient, HttpErrorResponse, HttpEventType, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpEventType, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
@@ -23,6 +23,17 @@ export class BaseService {
     return this.http.post(url, data).pipe(
       map(res => {
         
+        return res;
+      }),
+      catchError(err => {
+        return this.handleError(err);
+      })
+    );
+  }
+
+  public postRequest2(url, data, HttpUploadOptions) {
+    return this.http.post(url, data, HttpUploadOptions).pipe(
+      map(res => {
         return res;
       }),
       catchError(err => {
