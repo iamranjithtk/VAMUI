@@ -10,7 +10,7 @@ import { StudentService } from '../../service/student.service';
 export class StudentsMainPageComponent implements OnInit {
 
   dummyData;
-  studentDataList: any;
+  studentDataList = [];
 
   constructor(
     private router: Router,

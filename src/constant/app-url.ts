@@ -26,5 +26,9 @@ export class AppUrl {
   static get ADMIN_DETAILS(): string {
     return AppUrl.APP_URL + 'school/admin_dashboard/';
   }
+
+  static get FETCH_ASSIGNMENT_QUESTIONS(): string {
+    return AppUrl.APP_URL + 'assignment-questions/course_assignments/?course=1';
+  }
   
 }
