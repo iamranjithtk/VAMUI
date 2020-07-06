@@ -30,5 +30,8 @@ export class AppUrl {
   static uploadDocs(): string {
     return AppUrl.APP_URL + 'assignment-questions/';
   }
+  static get FETCH_ASSIGNMENT_QUESTIONS(): string {
+    return AppUrl.APP_URL + 'assignment-questions/course_assignments/?course=1';
+  }
   
 }
