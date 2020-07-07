@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  appUrl: 'https://vam-school.herokuapp.com/'
+  appUrl: 'http://13.233.89.0/server/'
 };
