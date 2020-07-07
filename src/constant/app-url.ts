@@ -34,4 +34,11 @@ export class AppUrl {
     return AppUrl.APP_URL + 'assignment-questions/course_assignments/?course=1';
   }
   
+  static get ASSIGNMENT_LIST(): string {
+    return AppUrl.APP_URL + 'evaluate-answer';
+  }
+
+  // static get ASSIGNMENT_LIST2(): string {
+  //   return AppUrl.APP_URL + 'evaluate-answer/?teacher=teacgeod';
+  // }
 }

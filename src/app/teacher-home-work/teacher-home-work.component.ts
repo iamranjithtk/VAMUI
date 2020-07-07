@@ -49,7 +49,10 @@ public fileUpload(files: any) {
     const formData: FormData = new FormData();
     const xhr: XMLHttpRequest = new XMLHttpRequest();
 
-    formData.append('file', files, files.name);
+    // formData.append('file', files, files.name);
+    //     const jsonse = JSON.stringify(files);
+    // const blob = new Blob([jsonse], { type: 'multipart/form-data' });
+    formData.append(`doc_question`, files, files.name);
     formData.append('topic', 'Introduction');
     formData.append('teacher', '1');
     formData.append('course', '1');
@@ -72,7 +75,7 @@ public fileUpload(files: any) {
 
     xhr.open('POST', AppUrl.uploadDocs(), true);
     // if (this.globalService.getAccessToken()) {
-      xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+      // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
       // xhr.setRequestHeader('Env-id', this.globalService.getSelf().getCurrentEnvironment().envMappingId + '');
       xhr.setRequestHeader('Authorization', 'Token ' + StorageService.getItem('token'));
     // }

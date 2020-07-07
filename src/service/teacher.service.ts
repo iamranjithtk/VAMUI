@@ -23,6 +23,10 @@ export class TeacherService extends BaseService {
     return this.getRequest(AppUrl.STUDENT_IN_COURSE);
   }
 
+  getAssignmentlist(): Observable<any> {
+    return this.getRequest(AppUrl.ASSIGNMENT_LIST);
+  }
+
   uploadStudentDocs(data): Observable<any> {
 
     const HttpUploadOptions = {
