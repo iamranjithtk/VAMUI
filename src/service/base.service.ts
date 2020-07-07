@@ -31,16 +31,6 @@ export class BaseService {
     );
   }
 
-  public postRequest2(url, data, HttpUploadOptions) {
-    return this.http.post(url, data, HttpUploadOptions).pipe(
-      map(res => {
-        return res;
-      }),
-      catchError(err => {
-        return this.handleError(err);
-      })
-    );
-  }
 
   public patchRequest(url, data = {}) {
     return this.http.patch(url, data).pipe(

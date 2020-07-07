@@ -27,11 +27,4 @@ export class TeacherService extends BaseService {
     return this.getRequest(AppUrl.ASSIGNMENT_LIST);
   }
 
-  uploadStudentDocs(data): Observable<any> {
-
-    const HttpUploadOptions = {
-      headers: new HttpHeaders({'enctype': 'multipart/form-data'}),
-    };
-    return this.postRequest2(AppUrl.uploadDocs, data, HttpUploadOptions);
-  }
 }
