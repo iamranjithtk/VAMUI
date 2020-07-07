@@ -13,15 +13,7 @@ export class InterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    let headers = {};
-    if ( (req.url.indexOf('assignment-questions')>-1)) {
-     console.log('assignment-questions api');
-     headers = {'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'};
-    } else {
-      console.log('vjh');
-      headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-    }
-
+    let headers = {'Content-Type': 'application/json', 'Accept': 'application/json'};
     // todo add token from shared service
     if (StorageService.getItem('token')) {
       headers['Authorization'] = 'Token ' + StorageService.getItem('token');
