@@ -35,7 +35,7 @@ export class AppUrl {
   }
   
   static get ASSIGNMENT_LIST(): string {
-    return AppUrl.APP_URL + 'evaluate-answer';
+    return AppUrl.APP_URL + 'assignment-questions/course_assignments/?course=';
   }
 
   // static get ASSIGNMENT_LIST2(): string {

@@ -2,8 +2,14 @@
     <div class="assignments">
         Check AssignMents
     </div>
-    <div class="assignement-list">
-        <div class="row">
+    <div *ngIf="isLoading" class="text-center">
+        Loading Data, Please wait...
+    </div>
+    <div class="assignement-list" *ngIf="!isLoading">
+        <div class="row" *ngFor="let i of assignmentTopicsList">
+            <div class="col" [routerLink]="['/wrapper/teacherdashboard/teachermarksassignments', username]" routerLinkActive="active">{{i.topic}}</div>
+        </div>
+        <!-- <div class="row">
             <div class="col">Assignement 1</div>
         </div>
         <div class="row">
@@ -17,9 +23,7 @@
         </div>
         <div class="row">
             <div class="col">Assignement 1</div>
-        </div>
-        <div class="row">
-            <div class="col">Assignement 1</div>
-        </div>
+        </div> -->
     </div>
 </div>
+<!-- <router-outlet></router-outlet> -->

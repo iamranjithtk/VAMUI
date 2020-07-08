@@ -23,11 +23,13 @@ import { StudentsMainPageComponent } from '../students-main-page/students-main-p
 import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.component';
 import { HeaderComponent } from '../header/header.component';
 import { HtpInterceptor } from 'src/service/interceptor.service';
+import { TeacherMarksAssignmentComponent } from '../teacher-marks-assignment/teacher-marks-assignment.component';
 
 @NgModule({
   declarations: [
     TeachertimetableComponent,
     TeacherDashboardComponent,
+    TeacherMarksAssignmentComponent,
     AdminComponent,
     WrapperComponent,
     TeacherNotesComponent,

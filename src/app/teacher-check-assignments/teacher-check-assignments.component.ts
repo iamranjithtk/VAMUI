@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeacherService } from 'src/service/teacher.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teacher-check-assignments',
@@ -7,20 +8,28 @@ import { TeacherService } from 'src/service/teacher.service';
   styleUrls: ['./teacher-check-assignments.component.css']
 })
 export class TeacherCheckAssignmentsComponent implements OnInit {
+  isLoading = false;
 
-  assignmentList=[];
+  assignmentTopicsList = [];
+  username = 'id';
+  // teacherInfoData;
   constructor(
-    public teacherService:TeacherService
-  ) { }
+    public teacherService: TeacherService,  private router: Router
+  ) {
+    // const navigation = this.router.getCurrentNavigation();
+    // this.teacherInfoData = navigation.extras;
+  }
 
   ngOnInit() {
-    this.getAssignMentData();
+    this.getAssignmentData();
   }
-  getAssignMentData(){
-    this.teacherService.getAssignmentlist().subscribe(res=>{
-      console.log(res, 'hg');
-      
-       this.assignmentList=res;
+  getAssignmentData() {
+    const ids = JSON.parse(sessionStorage.getItem('teacherAndCourseId'));
+    this.isLoading = true;
+    this.teacherService.getAssignmentlist(ids.courseId).subscribe(res => {
+      this.isLoading = false;
+
+       this.assignmentTopicsList = res;
 
     });
   }

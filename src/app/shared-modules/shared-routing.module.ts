@@ -19,6 +19,7 @@ import { StudentHomeworkComponent } from '../student-homework/student-homework.c
 import { StudentsMainPageComponent } from '../students-main-page/students-main-page.component';
 import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.component';
 import { HeaderComponent } from '../header/header.component';
+import { TeacherMarksAssignmentComponent } from '../teacher-marks-assignment/teacher-marks-assignment.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
           { path: 'teacherliveclass', component: TeacherLiveClassComponent },
           { path: 'teacherhomework', component: TeacherHomeWorkComponent },
           { path: 'teacherstudentlist', component: TeacherStudentListComponent },
-          { path: 'teachercheckassignments', component: TeacherCheckAssignmentsComponent }
+          { path: 'teachercheckassignments', component: TeacherCheckAssignmentsComponent},
+          {path: 'teachermarksassignments/:username', component: TeacherMarksAssignmentComponent}
         ]
       },
       { path: 'teacher-main-page', component: TeacherNavbarComponent, children: [
