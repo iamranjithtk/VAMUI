@@ -17,6 +17,8 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { MaterialModule } from './shared-modules/material.module';
 import { HtpInterceptor } from 'src/service/interceptor.service';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +34,11 @@ import { HtpInterceptor } from 'src/service/interceptor.service';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   schemas : [ NO_ERRORS_SCHEMA ],
   providers: [HtpInterceptor],

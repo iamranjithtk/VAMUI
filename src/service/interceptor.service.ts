@@ -13,7 +13,7 @@ export class InterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    let headers = {'Content-Type': 'application/json', 'Accept': 'application/json'};
+    let headers = {};
     // todo add token from shared service
     if (StorageService.getItem('token')) {
       headers['Authorization'] = 'Token ' + StorageService.getItem('token');

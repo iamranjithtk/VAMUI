@@ -9,54 +9,30 @@ import { StudentService } from '../../service/student.service';
 })
 export class StudentsMainPageComponent implements OnInit {
 
-  dummyData;
   studentDataList = [];
+  isLoading = false;
 
   constructor(
     private router: Router,
     private studentService: StudentService
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.dummyData = [
-      {
-        "teacherName": "Angela",
-        "totStudents": "32",
-        "subject": "English"
-      },
-      {
-        "teacherName": "John",
-        "totStudents": "38",
-        "subject": "Mathematics"
-      },
-      {
-        "teacherName": "Steve",
-        "totStudents": "32",
-        "subject": "Science"
-      },
-      {
-        "teacherName": "Woz",
-        "totStudents": "35",
-        "subject": "Social"
-      },
-      {
-        "teacherName": "Ronald",
-        "totStudents": "32",
-        "subject": "English"
-      },
-    ]
-    
+    this.fetchStudentDetails();
+  }
+
+  fetchStudentDetails() {
+    this.isLoading = true;
     this.studentService.fetchStudentDetails().subscribe(res => {
+      this.isLoading = false;
       this.studentDataList = res;
-      console.log("res = "+JSON.stringify(res))
-  });
-  
+    });
   }
 
   oncardClick() {
     this.router.navigate(['/wrapper/student-dashboard']);
   }
-  
+
 
 }
 

@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   
   loginForm: FormGroup;
   isLoading: boolean = false;
+  loginError: any;
 
   constructor(private fb:FormBuilder,public authService:AuthService,public router: Router ) {
     this.loginForm = this.fb.group({
@@ -24,9 +25,12 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    this.loginError = '';
   }
+  
   loginUser() {
       this.isLoading = true;
+      this.loginError = '';
       this.loginForm.get('password').markAsTouched();
       this.loginForm.get('email').markAsTouched();
       this.authService.authenticate(this.loginForm.value).subscribe(data => {
@@ -58,6 +62,7 @@ export class LoginComponent implements OnInit {
         },
         error => {
           this.isLoading = false;
+          this.loginError = error.error['detail'];
           // this.isBusy = false;
           // this.alertService.showError({title: 'Login Failure', message: 'User not found'});
         });

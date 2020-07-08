@@ -1,6 +1,9 @@
 <div class="mt-1">
     <div class="col-md-12 col-lg-12 col-sm-12">
         <app-header></app-header>
+        <div *ngIf="isLoading" class="text-center">
+            Loading Data, Please wait...
+        </div>
         <div class="subjects">
             <div class="row">
                 <div class="col-sm-3 mt-4" *ngFor="let studentData of studentDataList[0]?.course">
@@ -26,7 +29,6 @@
                         </div>
                     </div>
                 </div>
-                
         </div>
     </div>
 </div>
