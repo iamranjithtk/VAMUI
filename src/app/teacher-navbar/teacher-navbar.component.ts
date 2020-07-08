@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { AuthService } from 'src/service/auth.service';
 import { StorageService } from 'src/service/storage.service';
 import { TeacherService } from 'src/service/teacher.service';
@@ -10,7 +10,7 @@ import { TeacherService } from 'src/service/teacher.service';
   styleUrls: ['./teacher-navbar.component.css']
 })
 export class TeacherNavbarComponent implements OnInit {
-  teacherCourseList=[];
+  teacherCourseList = [];
   constructor(
     private router: Router,public authService:AuthService,public teacherService:TeacherService
   ) { }
@@ -22,11 +22,16 @@ export class TeacherNavbarComponent implements OnInit {
   getTeacherList(){
     this.teacherService.getTeacherCourselist().subscribe(res=>{
        this.teacherCourseList=res;
-       debugger
     })
-  }
-  gotoClassroom(){
-    this.router.navigate(['/wrapper/teacherdashboard']);
+  } 
+  gotoClassroom(id: number){
+    const navigationExtras: NavigationExtras = {
+      state: {
+        teacherId: this.teacherCourseList[0].id,
+        courseId: id,
+      }
+    };
+    this.router.navigate(['/wrapper/teacherdashboard'], navigationExtras);
   }
 
 }

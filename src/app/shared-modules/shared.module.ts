@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TeacherDashboardComponent } from '../teacher-dashboard/teacher-dashboard.component';
 import { AdminComponent } from '../admin/admin.component';
 import { WrapperComponent } from '../wrapper/wrapper.component';
@@ -50,7 +50,7 @@ import { HtpInterceptor } from 'src/service/interceptor.service';
   imports: [
     CommonModule,
     RouterModule,
-    SharedRoutingModule
+    SharedRoutingModule, FormsModule, ReactiveFormsModule
   ],
   exports: [
     TeachertimetableComponent,
