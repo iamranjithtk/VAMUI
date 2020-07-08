@@ -19,11 +19,13 @@
                             <input type="file">
                             <i class="fa fa-plus-circle align-right" aria-hidden="true"></i>
                         </button> -->
-                        <input type="file" id="file" class="ml-2">
-                        <label for="file">
+                        <div>
+                            <input type="file" [id]="'question' + question.id"  class="ml-2" (change)="uploadAnswers($event, question, question.topic)">
+                        <label [for]="'question' + question.id" >
                             Upload Answers
                         <i class="fa fa-upload" aria-hidden="true"></i>
                         </label>
+                        </div>
                     </li>
                 </ul>
             </div>

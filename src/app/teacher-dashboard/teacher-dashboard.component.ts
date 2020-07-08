@@ -8,16 +8,16 @@ import { Router } from '@angular/router';
 })
 export class TeacherDashboardComponent implements OnInit {
 
-  teacherInfo;
+  // teacherInfo;
   constructor(private router: Router) {
 
-    const navigation = this.router.getCurrentNavigation();
-  this.teacherInfo = navigation.extras;
+  //   const navigation = this.router.getCurrentNavigation();
+  // this.teacherInfo = navigation.extras;
   }
 
   gotoHomeworkTab(){
     const navigation = this.router.getCurrentNavigation();
-    this.router.navigate(['/wrapper/teacherdashboard/teacherhomework'], this.teacherInfo);
+    this.router.navigate(['/wrapper/teacherdashboard/teacherhomework']);
   }
 
   ngOnInit() {

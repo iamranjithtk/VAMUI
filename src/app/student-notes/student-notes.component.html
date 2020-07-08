@@ -1,32 +1,14 @@
 <div class="mt-4">
-    <div class="col-12">
+    <div *ngIf="isLoading" class="text-center">
+        Loading Data, Please wait...
+    </div>
+    <div class="col-12" *ngIf="!isLoading">
         <div class="card">
             <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <h4 class="chapter">Ch. 1 Evolution</h4>
-                        <button class="btn btn-primary liveBtn">
-                            <span class="mr-3">Read</span>
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <h4 class="chapter">Ch. 1 Evolution</h4>
-                        <button class="btn btn-primary liveBtn">
-                            <span class="mr-3">Read</span>
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <h4 class="chapter">Ch. 1 Evolution</h4>
-                        <button class="btn btn-primary liveBtn">
-                            <span class="mr-3">Read</span>
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <h4 class="chapter">Ch. 1 Evolution</h4>
-                        <button class="btn btn-primary liveBtn">
+                <ul class="list-group" *ngFor="let note of notesList">
+                    <li class="list-group-item d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="chapter">{{note.topic}}</h4>
+                        <button class="btn btn-primary liveBtn" (click)="readNotes(note.note)">
                             <span class="mr-3">Read</span>
                             <i class="fa fa-book" aria-hidden="true"></i>
                         </button>

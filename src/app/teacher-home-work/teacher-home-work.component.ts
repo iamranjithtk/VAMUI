@@ -12,14 +12,14 @@ import { StorageService } from 'src/service/storage.service';
 })
 export class TeacherHomeWorkComponent implements OnInit {
   // file: File = null;
-  teacherInfoData;
+  // teacherInfoData;
   assignmentTopic = '';
   progressLoading = new Subject<any>();
   constructor(
     private router: Router, private teacher: TeacherService, private route: ActivatedRoute
   ) {
-    const navigation = this.router.getCurrentNavigation();
-     this.teacherInfoData = navigation.extras;
+    // const navigation = this.router.getCurrentNavigation();
+    // this.teacherInfoData = navigation.extras;
    }
 
   ngOnInit() {
@@ -30,19 +30,23 @@ export class TeacherHomeWorkComponent implements OnInit {
   }
 
   handleFileInput(files: FileList) {
+    if (this.assignmentTopic === '') {
+      alert('please add assignment topic');
+    } else {
     this.fileUpload(files.item(0)).subscribe(res => {
       console.log(res);
     });
+  }
 }
 public fileUpload(files: any) {
   return Observable.create(observer => {
     const formData: FormData = new FormData();
     const xhr: XMLHttpRequest = new XMLHttpRequest();
-
+    const ids = JSON.parse(sessionStorage.getItem('teacherAndCourseId'));
     formData.append(`doc_question`, files, files.name);
     formData.append('topic', this.assignmentTopic);
-    formData.append('teacher', this.teacherInfoData.state.teacherId);
-    formData.append('course', this.teacherInfoData.state.courseId);
+    formData.append('teacher', ids.teacherId);
+    formData.append('course', ids.courseId);
 
 
     xhr.onreadystatechange = () => {

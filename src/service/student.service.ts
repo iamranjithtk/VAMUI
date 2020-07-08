@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { BaseService } from 'src/service/base.service';
 import { AppUrl } from 'src/constant/app-url';
 import { Observable } from 'rxjs';
@@ -22,6 +22,23 @@ export class StudentService extends BaseService{
 
   fetchAssignmentQuestions(): Observable<any>{
     return this.getRequest(AppUrl.FETCH_ASSIGNMENT_QUESTIONS);
-}
+  }
+
+  fetchNotes(): Observable<any>{
+    return this.getRequest(AppUrl.FETCH_NOTES);
+  }
+
+  uploadAnswers(data): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.set('Content-Type', null);
+    headers.set('Accept', "multipart/form-data");
+    let params = new HttpParams();
+    return this.http.post(AppUrl.UPLOAD_ANSWERS, data, { params, headers });
+  }
+
+  answers(): Observable<any>{
+    return this.getRequest(AppUrl.ANSWERS);
+  }
+
 
 }

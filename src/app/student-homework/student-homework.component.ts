@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/service/student.service';
 import { Router } from '@angular/router';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-student-homework',
   templateUrl: './student-homework.component.html',
@@ -11,14 +13,24 @@ export class StudentHomeworkComponent implements OnInit {
 
   assignmentQuestions = [];
   isLoading = false;
+  uploadedAnswerResp: any;
+  answers = [];
 
   constructor(
     private router: Router,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
     this.fetchAssignmentQuestions();
+    this.answer();
+  }
+
+  answer(){
+    this.studentService.answers().subscribe(res => {
+      this.answers = res;
+    })
   }
 
   fetchAssignmentQuestions() {
@@ -35,6 +47,21 @@ export class StudentHomeworkComponent implements OnInit {
 
   downloadQuestions(){}
 
-  uploadAnswers(){}
+  uploadAnswers(fileInput, question, questionTopic) {
+    const formData: FormData = new FormData();
+    const files: File = fileInput.target.files;
+    formData.append('doc_answer', files[0], files[0].name);
+    formData.append('student', "3");
+    formData.append('question', question.id);
+    formData.append('json_answer', JSON.stringify(questionTopic));
+    this.studentService.uploadAnswers(formData).subscribe(data => {
+      this.uploadedAnswerResp = data;
+      this.toastr.success("File uploaded succesfully!", "Success")
+      this.answer();
+    },
+    error => {
+      this.toastr.error("Failed to upload file!", "Failed")
+    });
+  }
 
 }

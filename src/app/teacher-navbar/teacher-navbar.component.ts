@@ -25,13 +25,18 @@ export class TeacherNavbarComponent implements OnInit {
     })
   } 
   gotoClassroom(id: number){
-    const navigationExtras: NavigationExtras = {
-      state: {
-        teacherId: this.teacherCourseList[0].id,
-        courseId: id,
-      }
-    };
-    this.router.navigate(['/wrapper/teacherdashboard'], navigationExtras);
+    // const navigationExtras: NavigationExtras = {
+    //   state: {
+    //     teacherId: this.teacherCourseList[0].id,
+    //     courseId: id,
+    //   }
+    // };
+    const data = {
+          teacherId: this.teacherCourseList[0].id,
+          courseId: id,
+        };
+    sessionStorage.setItem('teacherAndCourseId', JSON.stringify(data));
+    this.router.navigate(['/wrapper/teacherdashboard']);
   }
 
 }
