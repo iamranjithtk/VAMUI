@@ -7,6 +7,10 @@
   box-shadow: 0px 6px 12px #81818133;
   border-radius: 24px;
   opacity: 1;
+  
+  max-height: 600px;
+  overflow-y: scroll;
+
 }
 
 .assignments {
@@ -44,4 +48,10 @@ img {
   .inputBox{
     width: 25%;
     border: none;
+    text-align: right;
+  }
+
+  .assignmentColor{
+    text-decoration: underline;
+    color: #36d1dc;
   }

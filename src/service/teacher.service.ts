@@ -27,4 +27,12 @@ export class TeacherService extends BaseService {
     return this.getRequest(AppUrl.ASSIGNMENT_LIST+courseId);
   }
 
+  getQuestionsList(questionId): Observable<any> {
+    return this.getRequest(AppUrl.QUESTION_LIST+questionId);
+  }
+
+  updateMarks(questionId, data): Observable<any> {
+    return this.patchRequest(AppUrl.MARKS_UPDATE() +questionId, data);
+  }
+
 }

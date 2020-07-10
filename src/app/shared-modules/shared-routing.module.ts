@@ -34,7 +34,7 @@ const routes: Routes = [
           { path: 'teacherhomework', component: TeacherHomeWorkComponent },
           { path: 'teacherstudentlist', component: TeacherStudentListComponent },
           { path: 'teachercheckassignments', component: TeacherCheckAssignmentsComponent},
-          {path: 'teachermarksassignments/:username', component: TeacherMarksAssignmentComponent}
+          {path: 'teachermarksassignments/:topicId', component: TeacherMarksAssignmentComponent}
         ]
       },
       { path: 'teacher-main-page', component: TeacherNavbarComponent, children: [

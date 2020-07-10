@@ -7,23 +7,7 @@
     </div>
     <div class="assignement-list" *ngIf="!isLoading">
         <div class="row" *ngFor="let i of assignmentTopicsList">
-            <div class="col" [routerLink]="['/wrapper/teacherdashboard/teachermarksassignments', username]" routerLinkActive="active">{{i.topic}}</div>
+            <div class="col"  [routerLink]="['/wrapper/teacherdashboard/teachermarksassignments', i.topic+'?'+i.id]" routerLinkActive="active">{{i.topic}}</div>
         </div>
-        <!-- <div class="row">
-            <div class="col">Assignement 1</div>
-        </div>
-        <div class="row">
-            <div class="col">Assignement 1</div>
-        </div>
-        <div class="row">
-            <div class="col">Assignement 1</div>
-        </div>
-        <div class="row">
-            <div class="col">Assignement 1</div>
-        </div>
-        <div class="row">
-            <div class="col">Assignement 1</div>
-        </div> -->
     </div>
 </div>
-<!-- <router-outlet></router-outlet> -->

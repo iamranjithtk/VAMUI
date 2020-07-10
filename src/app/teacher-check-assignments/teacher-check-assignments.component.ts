@@ -11,13 +11,10 @@ export class TeacherCheckAssignmentsComponent implements OnInit {
   isLoading = false;
 
   assignmentTopicsList = [];
-  username = 'id';
-  // teacherInfoData;
+
   constructor(
-    public teacherService: TeacherService,  private router: Router
+    public teacherService: TeacherService
   ) {
-    // const navigation = this.router.getCurrentNavigation();
-    // this.teacherInfoData = navigation.extras;
   }
 
   ngOnInit() {
@@ -29,7 +26,7 @@ export class TeacherCheckAssignmentsComponent implements OnInit {
     this.teacherService.getAssignmentlist(ids.courseId).subscribe(res => {
       this.isLoading = false;
 
-       this.assignmentTopicsList = res;
+      this.assignmentTopicsList = res;
 
     });
   }
