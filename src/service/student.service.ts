@@ -40,5 +40,9 @@ export class StudentService extends BaseService{
     return this.getRequest(AppUrl.ANSWERS);
   }
 
+  fetchVideos(): Observable<any>{
+    return this.getRequest(AppUrl.FETCH_UPLOADED_VIDEOS);
+  }
+
 
 }

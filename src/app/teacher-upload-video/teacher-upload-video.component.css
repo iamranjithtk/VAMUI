@@ -24,3 +24,31 @@
   .row{
       margin-top: 35px;
   }
+
+  [type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  [type="file"] + label {
+    width: 144px;
+    background-color: blue;
+    color: #fff;
+    border: 1px solid #007bff;;
+    border-radius: 18px;
+    cursor: pointer;
+    position: relative;
+    padding: 1rem 50px;
+    font-weight: 400;
+    text-align: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    /* margin-top: 8px; */
+    height: 39px;
+}
+
+.upload-video{
+  margin: 0 auto;
+}

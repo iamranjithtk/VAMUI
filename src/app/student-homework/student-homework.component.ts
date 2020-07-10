@@ -42,7 +42,7 @@ export class StudentHomeworkComponent implements OnInit {
   }
 
   viewQuestions(url){
-    window.open("https://vam-school.herokuapp.com"+url, "_new");
+    window.open(url, "_new");
   }
 
   downloadQuestions(){}

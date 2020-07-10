@@ -52,7 +52,7 @@ export class AppUrl {
   }
 
   static get FETCH_NOTES(): string {
-    return AppUrl.APP_URL + 'notes/?course=7';
+    return AppUrl.APP_URL + 'notes/?course=2';
   }
 
   static get UPLOAD_ANSWERS(): string{
@@ -61,6 +61,22 @@ export class AppUrl {
 
   static get ANSWERS(): string {
     return AppUrl.APP_URL + 'answer/';
+  }
+
+  static get UPLOAD_NOTES(): string {
+    return AppUrl.APP_URL + 'notes/';
+  }
+  
+  static get SELECT_VIDEO(): string {
+    return AppUrl.APP_URL + 'video/';
+  }
+
+  // static UPLOAD_VIDEO(url): string {
+  //   return url;
+  // }
+
+  static get FETCH_UPLOADED_VIDEOS(): string {
+    return AppUrl.APP_URL + 'video/?course=4'
   }
   
 }

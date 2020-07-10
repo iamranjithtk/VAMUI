@@ -8,7 +8,7 @@ import { StudentService } from 'src/service/student.service';
 })
 export class StudentNotesComponent implements OnInit {
 
-  notesList;
+  notesList = [];
   isLoading = false;
 
   constructor(

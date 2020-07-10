@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/service/student.service';
 
 @Component({
   selector: 'app-student-videos',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentVideosComponent implements OnInit {
 
-  constructor() { }
+  uploadedVideos = [];
+  isLoading = false;
+
+  constructor(
+    private studentService: StudentService
+  ) { }
 
   ngOnInit() {
+    this.fetchVideos();
+  }
+
+  fetchVideos(){
+    this.isLoading = true;
+    this.studentService.fetchVideos().subscribe(res => {
+      this.isLoading = false;
+      this.uploadedVideos = res;
+    })
+  }
+
+  watchVideo(video){
+    window.open(video, "_new");
   }
 
 }
