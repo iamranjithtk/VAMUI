@@ -60,7 +60,7 @@ export class StudentHomeworkComponent implements OnInit {
       this.answer();
     },
     error => {
-      this.toastr.error("Failed to upload file!", "Failed")
+      this.toastr.error("An answer has already been submitted to this question.", "Failed")
     });
   }
 
