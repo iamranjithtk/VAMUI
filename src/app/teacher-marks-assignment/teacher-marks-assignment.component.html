@@ -19,12 +19,12 @@
   </div>
 
   <div class="d-flex bd-highlight" *ngFor="let i of assignmentQuestionsList ">
-    <div class="d-flex p-2 bd-highlight">
-      Aakash singh
+    <div class="d-flex p-2 bd-highlight" style="width: 15%;">
+      {{i.student_name}}
     </div>
    <div class="d-flex bd-highlight">
     <div class="d-flex p-2 bd-highlight">
-      Submitted on 02/03/2020
+      {{i.updatedDate}}
     </div>
     <div class="d-flex p-2 bd-highlight">
       <input type="text" class="inputBox" [(ngModel)]="i.mark"><span>/100</span>

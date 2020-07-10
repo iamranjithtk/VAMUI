@@ -33,7 +33,7 @@ export class TeacherService extends BaseService {
   }
 
   updateMarks(questionId, data): Observable<any> {
-    return this.patchRequest(AppUrl.MARKS_UPDATE() +questionId, data);
+    return this.patchRequest(AppUrl.MARKS_UPDATE() +questionId+'/', data);
   }
 
   uploadNotes(data): Observable<any>{
