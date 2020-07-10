@@ -27,21 +27,26 @@ export class TeacherMarksAssignmentComponent implements OnInit {
     this.isLoading = true;
     this.teacherService.getQuestionsList(this.topicId.split('?')[1]).subscribe(res => {
       this.isLoading = false;
+      res.forEach(element => {
+        element.updatedDate = element.created_on.split('T')[0];
+        element.updatedDate = element.updatedDate.split('-')[1] + '/' + element.updatedDate.split('-')[2] + '/' +
+          element.updatedDate.split('-')[0];
+      });
       this.assignmentQuestionsList = res;
 
     });
   }
 
-  getData(i){
-this.teacherService.updateMarks(i.id, {mark: i.mark}).subscribe(res => {
-  this.toastr.success('Marks updated succesfully!', 'Success');
+  getData(i) {
+    this.teacherService.updateMarks(i.id, { mark: i.mark }).subscribe(res => {
+      this.toastr.success('Marks updated succesfully!', 'Success');
 
-console.log(res, 'res');
+      console.log(res, 'res');
 
 
-},
-error => {
-  this.toastr.error("Some error occured", "Failed")
-});
+    },
+      error => {
+        this.toastr.error('Some error occured', 'Failed');
+      });
   }
 }
