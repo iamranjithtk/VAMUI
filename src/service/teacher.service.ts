@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppUrl } from 'src/constant/app-url';
 import { BaseService } from './base.service';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpBackend } from '@angular/common/http';
 import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
 })
 export class TeacherService extends BaseService {
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public handler: HttpBackend ) {
     super(http);
 
    }
@@ -52,14 +52,15 @@ export class TeacherService extends BaseService {
     return this.http.post(AppUrl.SELECT_VIDEO, data, { params, headers });
   }
 
-  // uploadVideo(formData, url): Observable<any>{
-  //   let headers = new HttpHeaders();
-  //   headers.set('Content-Type', null);
-  //   headers.set('Accept', "multipart/form-data");
-  //   headers.set('Authorization', 'none');
-  //   let params = new HttpParams();
-  //   return this.http.put(AppUrl.UPLOAD_VIDEO(url), formData, { params, headers });
-  // }
+  uploadVideo(formData, url): Observable<any>{
+    this.http = new HttpClient(this.handler);
+    let headers = {};
+    // headers.set('Content-Type', null);
+    // headers.set('Accept', "multipart/form-data");
+    //headers['Authorization'] = null;
+    //let params = new HttpParams();
+    return this.http.post(AppUrl.UPLOAD_VIDEO(url), formData, { headers });
+  }
 
 
 

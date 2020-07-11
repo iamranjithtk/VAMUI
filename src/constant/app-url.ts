@@ -71,9 +71,9 @@ export class AppUrl {
     return AppUrl.APP_URL + 'video/';
   }
 
-  // static UPLOAD_VIDEO(url): string {
-  //   return url;
-  // }
+  static UPLOAD_VIDEO(url): string {
+    return url;
+  }
 
   static get FETCH_UPLOADED_VIDEOS(): string {
     return AppUrl.APP_URL + 'video/?course=4'

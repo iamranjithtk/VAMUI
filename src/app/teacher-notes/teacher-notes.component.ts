@@ -12,6 +12,7 @@ export class TeacherNotesComponent implements OnInit {
   topicName: string;
   uploadedNotesResp = [];
   notesTopic: string;
+  spinnerFlag = false;
 
   constructor(
     private toaster: ToastrService,
@@ -23,6 +24,7 @@ export class TeacherNotesComponent implements OnInit {
   }
 
   uploadNotes(fileInput) {
+    this.spinnerFlag = true;
     const formData: FormData = new FormData();
     const files: File = fileInput.target.files;
     formData.append('note', files[0], files[0].name);
@@ -32,9 +34,11 @@ export class TeacherNotesComponent implements OnInit {
     this.teacherService.uploadNotes(formData).subscribe(data => {
       this.uploadedNotesResp = data;
       this.notesTopic = '';
-      this.toaster.success("File uploaded succesfully!", "Success")
+      this.spinnerFlag = false;
+      this.toaster.success("File uploaded succesfully!", "Success");
     },
     error => {
+      this.spinnerFlag = false;
       this.toaster.error("Failed to upload file!", "Failed")
     });
   }
