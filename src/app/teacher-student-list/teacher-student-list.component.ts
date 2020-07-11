@@ -16,7 +16,8 @@ export class TeacherStudentListComponent implements OnInit {
     this.getStudentInCourseList();
   }
   getStudentInCourseList(){
-    this.teacherService.getStudentInCourselist().subscribe(res=>{
+    const ids = JSON.parse(sessionStorage.getItem('teacherAndCourseId'));
+    this.teacherService.getStudentInCourselist(ids.courseId).subscribe(res=>{
        this.studentInCourseList=res;
     });
   }
