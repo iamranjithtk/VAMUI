@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-2 px-1 position-fixed sidebar" id="sticky-sidebar">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 px-1 position-fixed sidebar sideBarLS" id="sticky-sidebar">
             <div class="nav flex-column flex-nowrap vh-100 overflow-auto">
                 <nav class="navbar navbar-light text-center">
                     <ul class="navbar-nav">
@@ -30,7 +30,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" routerLink="{{role == 'STUDENT' ? '/wrapper/student-main-page' : '/wrapper/teacher-main-page'}}" routerLinkActive="active">
+                            <a class="nav-link" *ngIf="role == 'STUDENT'" routerLink="/wrapper/student-main-page" routerLinkActive="active">
+                                Dashboard
+                            </a>
+                            <a class="nav-link" *ngIf="role == 'TEACHER'" routerLink="/wrapper/teacher-main-page" routerLinkActive="active">
+                                Dashboard
+                            </a>
+                            <a class="nav-link" *ngIf="role == 'OWNER'" routerLink="/wrapper/admin" routerLinkActive="active">
                                 Dashboard
                             </a>
                         </li>
@@ -52,17 +58,17 @@
                                 Time Table
                             </a>
                         </li>
-                        <li class="nav-item" *ngIf="role==='OWNER'">
+                        <!-- <li class="nav-item" *ngIf="role==='OWNER'">
                             <a class="nav-link" (click)="logout()"
                             routerLinkActive="active">
                                 Logout
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="col-10 offset-2" id="main">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 offset-2" id="main">
             <router-outlet></router-outlet>
         </div>
     </div>
