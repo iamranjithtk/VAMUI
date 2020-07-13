@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/service/storage.service';
 
 @Component({
   selector: 'app-student-dashboard',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentDashboardComponent implements OnInit {
 
-  constructor() { }
+  role;
+  
+  constructor() { 
+    this.role=StorageService.getItem('role');
+  }
 
   ngOnInit() {
   }

@@ -10,11 +10,19 @@
             <div class="card-body">
                 <ul class="list-group" *ngFor="let uploadVideo of uploadedVideos">
                     <li class="list-group-item d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="chapter">{{uploadVideo.topic}}</h4>
-                        <button class="btn btn-primary liveBtn" (click)="watchVideo(uploadVideo.video)">
-                            <span class="mr-3">Watch Video</span>
-                            <i class="fa fa-video-camera align-right" aria-hidden="true"></i>
-                        </button>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+                           <div class="col-lg-6 col-md-6 col-sm-6">
+                            <h4 class="chapter">{{uploadVideo.topic}}</h4>
+                           </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 wtchVideo">
+                            <button class="btn btn-primary liveBtnVideo" (click)="watchVideo(uploadVideo.video)">
+                                <span class="mr-3">Watch Video</span>
+                                <i class="fa fa-video-camera align-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        </div>
+                    </div>
                     </li>
                 </ul>
             </div>

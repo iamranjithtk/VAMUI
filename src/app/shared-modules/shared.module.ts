@@ -24,6 +24,7 @@ import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.compone
 import { HeaderComponent } from '../header/header.component';
 import { HtpInterceptor } from 'src/service/interceptor.service';
 import { TeacherMarksAssignmentComponent } from '../teacher-marks-assignment/teacher-marks-assignment.component';
+import { SidebarSsComponent } from '../sidebar-ss/sidebar-ss.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TeacherMarksAssignmentComponent } from '../teacher-marks-assignment/tea
     SideBarComponent,
     StudentsMainPageComponent,
     TeacherNavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarSsComponent
   ],
   imports: [
     CommonModule,
@@ -72,7 +74,8 @@ import { TeacherMarksAssignmentComponent } from '../teacher-marks-assignment/tea
     StudentNotesComponent,
     StudentsMainPageComponent,
     TeacherNavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarSsComponent
   ],
   providers: [HtpInterceptor]
 })
