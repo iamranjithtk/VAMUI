@@ -30,7 +30,7 @@ export class StudentsMainPageComponent implements OnInit {
   }
 
   oncardClick() {
-    this.router.navigate(['/wrapper/student-dashboard']);
+    this.router.navigate(['/wrapper/student-dashboard/student-live-class']);
   }
 
 

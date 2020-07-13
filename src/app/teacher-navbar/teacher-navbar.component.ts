@@ -36,7 +36,7 @@ export class TeacherNavbarComponent implements OnInit {
           courseId: id,
         };
     sessionStorage.setItem('teacherAndCourseId', JSON.stringify(data));
-    this.router.navigate(['/wrapper/teacherdashboard']);
+    this.router.navigate(['/wrapper/teacherdashboard/teacherliveclass']);
   }
 
 }
