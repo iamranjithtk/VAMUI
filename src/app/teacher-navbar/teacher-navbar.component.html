@@ -7,11 +7,11 @@
                 <div class="card mb-4" *ngFor="let teacherInfo of teacherCourseList[0]?.course">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-5 ml-5">
+                            <div class=" col-md-12 col-sm-12 col-xs-12 col-lg-5">
                                 <img src="../../assets/images/teacher-img.png"
-                                    alt="img" height="200" width="250">
+                                    alt="img" height="200" width="250" class="imgResponsive">
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-7">
                                 <div>
                                     <h2>{{teacherInfo?.subject?.subject_name}}</h2>
                                 </div>
