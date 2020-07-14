@@ -112,6 +112,8 @@ export class TeacherLiveClassComponent implements OnInit {
       console.log("client leave failed ", err);
       this.toaster.error("Some error occurred while leaving. Please try again!", "Failed")
     });
+    this.localStream.stop();
+    this.localStream.close();
     this.showImage = true;
     this.showStopBtn = false;
   }
