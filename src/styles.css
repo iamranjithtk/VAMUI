@@ -119,6 +119,12 @@ body {
     .navSideBarForSS{
       display: block;
     }
+    #agora_local{
+      margin:auto;
+      height: 500px;
+      width: 500px;
+      display: inline-block;
+    }
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -151,13 +157,19 @@ body {
     .contact-us{
       padding-top: 50px !important;
     }
-
+    
     .teacher-student-list{
-width: 100% !important;
+      width: 100% !important;
     }
-
+      
     .notesSectionTeacher{
       top:20px;
+    } 
+    #agora_local{
+      margin:auto;
+      height: 500px;
+      width: 500px;
+      display: inline-block;
     }
 }
 
@@ -178,6 +190,11 @@ width: 100% !important;
   .navSideBarForSS{
     display: block;
   }
+  #agora_local{
+    height: 500px;
+    width: 500px;
+    display: inline-block;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -194,6 +211,11 @@ width: 100% !important;
   }
   .sideBarLS{
     display: block;
+  }
+  #agora_local{
+    height: 551px;
+    width: 1142px;
+    display: inline-block;
   }
 }
 
@@ -212,6 +234,11 @@ width: 100% !important;
   .sideBarLS{
     display: block;
   }
+  #agora_local{
+    height: 551px;
+    width: 1142px;
+    display: inline-block;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -228,5 +255,10 @@ width: 100% !important;
   }
   .sideBarLS{
     display: block;
+  }
+  #agora_local{
+    height: 551px;
+    width: 1142px;
+    display: inline-block;
   }
 }

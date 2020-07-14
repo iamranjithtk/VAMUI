@@ -18,13 +18,19 @@ import { StudentNotesComponent } from '../student-notes/student-notes.component'
 import { TeachertimetableComponent } from '../teachertimetable/teachertimetable.component';
 import { StudentHomeworkComponent } from '../student-homework/student-homework.component';
 import { RouterModule } from '@angular/router';
-import { SharedRoutingModule } from './shared-routing.module';
+import { SharedRoutingModule, routingModule } from './shared-routing.module';
 import { StudentsMainPageComponent } from '../students-main-page/students-main-page.component';
 import { TeacherNavbarComponent } from '../teacher-navbar/teacher-navbar.component';
 import { HeaderComponent } from '../header/header.component';
 import { HtpInterceptor } from 'src/service/interceptor.service';
 import { TeacherMarksAssignmentComponent } from '../teacher-marks-assignment/teacher-marks-assignment.component';
 import { SidebarSsComponent } from '../sidebar-ss/sidebar-ss.component';
+
+import { AgoraConfig, AngularAgoraRtcModule } from 'angular-agora-rtc';
+
+const agoraConfig: AgoraConfig = {
+  AppID: 'd93c22ae894740f6a8051d3d34f74da1',
+};
 
 @NgModule({
   declarations: [
@@ -49,12 +55,16 @@ import { SidebarSsComponent } from '../sidebar-ss/sidebar-ss.component';
     StudentsMainPageComponent,
     TeacherNavbarComponent,
     HeaderComponent,
-    SidebarSsComponent
+    SidebarSsComponent,
+    routingModule
   ],
   imports: [
     CommonModule,
     RouterModule,
-    SharedRoutingModule, FormsModule, ReactiveFormsModule
+    SharedRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularAgoraRtcModule.forRoot(agoraConfig)
   ],
   exports: [
     TeachertimetableComponent,
