@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AngularAgoraRtcService, Stream } from 'angular-agora-rtc';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-teacher-live-class',
@@ -14,9 +15,11 @@ export class TeacherLiveClassComponent implements OnInit {
   remoteCalls: any = [];
   showImage: boolean = true;
   showStopBtn = false;
+  spinnerFlag: boolean;
 
   constructor(
-    private agoraService: AngularAgoraRtcService
+    private agoraService: AngularAgoraRtcService,
+    private toaster: ToastrService
   ) { 
     this.agoraService.createClient();
   }
@@ -28,6 +31,7 @@ export class TeacherLiveClassComponent implements OnInit {
   goLive(){
     this.showImage = false;
     this.showStopBtn = true;
+    this.spinnerFlag = true;
     var channel_name = ((document.getElementById("channel_name") as HTMLInputElement).value);
     console.log(channel_name);
     this.agoraService.client.join(null, channel_name, null, (uid) => {
@@ -55,6 +59,7 @@ export class TeacherLiveClassComponent implements OnInit {
       this.agoraService.client.on('stream-published', function (evt) {
         console.log("Publish local stream successfully");
       });
+      this.spinnerFlag = false;
     }, function (err) {
       console.log("getUserMedia failed", err);
     });
@@ -100,9 +105,13 @@ export class TeacherLiveClassComponent implements OnInit {
     }); 
   }
 
-  stopLive(){
-    this.localStream.stop();
-    this.localStream.close();
+  stopLive() {
+    this.agoraService.client.leave(function () {
+      console.log("client leaves channel");
+    }, function (err) {
+      console.log("client leave failed ", err);
+      this.toaster.error("Some error occurred while leaving. Please try again!", "Failed")
+    });
     this.showImage = true;
     this.showStopBtn = false;
   }
