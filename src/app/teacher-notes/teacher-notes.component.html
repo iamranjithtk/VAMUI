@@ -11,9 +11,11 @@
   </div>
 
   <div class="col-md-6 mt-4 upload-notes">
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 notesSectionTeacher">
+      <div>
       <input type="text" class="form-control" placeholder="Enter Topic" aria-describedby="basic-addon2"
       [(ngModel)]="notesTopic">
+    </div>
       <div class="input-group-append">
         <input type="file" id="file" (change)="uploadNotes($event)">
         <label for="file">
